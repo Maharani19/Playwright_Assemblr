@@ -1,0 +1,35 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://app-edu.assemblrworld.com/');
+  await page.goto('https://app-edu.assemblrworld.com/Prelogin');
+  await page.goto('https://app-edu.assemblrworld.com/Class');
+  await page.goto('https://app-edu.assemblrworld.com/Prelogin');
+  await page.getByRole('button', { name: 'Confirm' }).click();
+  await page.getByRole('button', { name: 'I already have an account' }).click();
+  await page.getByPlaceholder('Enter your email or username').click();
+  await page.getByPlaceholder('Enter your email or username').fill('cobacoba1');
+  await page.getByPlaceholder('Enter your password').click();
+  await page.getByPlaceholder('Enter your password').fill('cobacoba1');
+  await page.getByRole('button', { name: 'LOGIN' }).click();
+  await page.goto('https://app-edu.assemblrworld.com/profile-completion');
+  await page.getByRole('button', { name: 'OK, I understand' }).click();
+  await page.getByRole('button', { name: 'Skip' }).click();
+  await page.getByRole('button', { name: 'I already have an account' }).click();
+  await page.getByPlaceholder('Enter your email or username').click();
+  await page.getByPlaceholder('Enter your email or username').fill('cobacoba1');
+  await page.getByPlaceholder('Enter your password').click();
+  await page.getByPlaceholder('Enter your password').fill('cobacoba1');
+  await page.getByRole('button', { name: 'LOGIN' }).click();
+  await page.getByRole('button', { name: 'Log out' }).first().click();
+  await page.getByRole('button', { name: 'Log in' }).click();
+  await page.getByRole('button', { name: 'Skip' }).click();
+  await page.getByLabel('Skip — I\'ve known everything').click();
+  await page.getByRole('link', { name: 'Topics' }).click();
+  await page.getByRole('link', { name: 'Life Science' }).click();
+  await page.getByRole('link', { name: 'The Rat\'s Anatomy Did you know that rats are the most trusted and reliable animal in biomedical research? It’s because they have biological similarities with humans and can also simulate human diseases. Now that you already know about it, let’s find out the muscle anatomy of rats!  Play ' }).click();
+  await page.locator('.content-detail-share2 > img').click();
+  await page.getByText('Share it to your class').click();
+  await page.getByText('Class QA').click();
+  await page.getByLabel('Class QA').click();
+});

@@ -1,0 +1,44 @@
+{
+  "name": "playwright-assemblr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "env:dev": "cross-env test_env=dev npx playwright test",
+    "env:prod": "cross-env test_env=prod npx playwright test",
+    "env:staging": "cross-env test_env=staging npx playwright test",
+    "pwwatch": "cross-env test_env=prod npx pw-watch --reporter @deploysentinel/playwright",
+    "debugmode": "cross-env test_env=prod npx playwright test --debug",
+    "debugdev": "cross-env test_env=dev npx playwright test --debug",
+    "shard1:prod": "cross-env test_env=prod npx playwright test --shard=1/6",
+    "shard2:prod": "cross-env test_env=prod npx playwright test --shard=2/6",
+    "shard3:prod": "cross-env test_env=prod npx playwright test --shard=3/6",
+    "shard4:prod": "cross-env test_env=prod npx playwright test --shard=4/6",
+    "shard5:prod": "cross-env test_env=prod npx playwright test --shard=5/6",
+    "shard6:prod": "cross-env test_env=prod npx playwright test --shard=6/6",
+    "uiprod": "cross-env test_env=prod npx playwright test --ui",
+    "uidev": "cross-env test_env=dev npx playwright test --ui",
+    "uistaging": "cross-env test_env=staging npx playwright test --ui",
+    "shard1:dev": "cross-env test_env=dev npx playwright test --shard=1/6",
+    "shard2:dev": "cross-env test_env=dev npx playwright test --shard=2/6",
+    "shard3:dev": "cross-env test_env=dev npx playwright test --shard=3/6",
+    "shard4:dev": "cross-env test_env=dev npx playwright test --shard=4/6",
+    "shard5:dev": "cross-env test_env=dev npx playwright test --shard=5/6",
+    "shard6:dev": "cross-env test_env=dev npx playwright test --shard=6/6"
+  },
+  "author": "Purnama",
+  "license": "ISC",
+  "devDependencies": {
+    "@deploysentinel/playwright": "^0.3.3",
+    "@deploysentinel/playwright-watch": "^0.2.2",
+    "@playwright/test": "^1.37.0",
+    "cross-env": "^7.0.3" 
+  },
+  "dependencies": {
+    "clipboardy": "^3.0.0",
+    "dotenv": "^16.0.3",
+    "playwright": "^1.30.0"
+    
+  }
+  
+}
